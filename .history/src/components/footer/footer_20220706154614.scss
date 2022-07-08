@@ -1,0 +1,101 @@
+@use "../../scss/" as *;
+
+.footer {
+	position: relative;
+	padding: 6rem 2rem;
+	background-position: top;
+	background-size: cover;
+	background-repeat: no-repeat;
+	.social-links {
+		text-align: center;
+		position: relative;
+		bottom: 50px;
+		left: 10px;
+	}
+
+	.icon {
+		position: relative;
+		top: 20px;
+		display: inline-block;
+		height: 40px;
+		width: 40px;
+		background-color: rgba(255, 255, 255, 0.2);
+		margin: 0 10px 10px 0;
+		text-align: center;
+		line-height: 40px;
+		border-radius: 50%;
+		color: #ffffff;
+		transition: all 0.5s ease;
+	}
+
+	.icon:hover {
+		color: #000000;
+		background-color: #ffffff;
+	}
+
+	@include mobile {
+		grid-template-columns: repeat(2, 1fr);
+		.icon {
+			position: relative;
+			top: 8px;
+			height: 30px;
+			width: 30px;
+			line-height: 30px;
+		}
+
+		.social-links {
+			text-align: center;
+			position: relative;
+			bottom: 30px;
+			left: 5px;
+		}
+	}
+
+	&__content {
+		max-width: 1000px;
+
+		&__logo {
+			@include flex(center, center);
+			margin-bottom: 3rem;
+		}
+
+		&__menus {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+
+			@include mobile {
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+
+		&__menu {
+			@include flex(flex-start, flex-start);
+			flex-direction: column;
+			margin-top: 1rem;
+			padding-left: 100px;
+
+			font-size: 1.5rem;
+			font-weight: 600;
+
+			& > * ~ * {
+				margin-top: 1rem;
+			}
+
+			@include mobile {
+				grid-template-columns: repeat(2, 1fr);
+				padding-left: 30px;
+
+				.about {
+					position: relative;
+					left: 30px;
+				}
+
+				.privacy {
+					position: relative;
+					top: 10px;
+					left: 90px;
+				}
+			}
+		}
+	}
+}
