@@ -14,23 +14,42 @@ import {
 import bg from "../../assets/footer-bg.jpg";
 import logo from "../../assets/tmovie.png";
 
-const headerNav = [
+const footerNav = [
 	{
 		display: "Contact",
 		path: "/contact",
 	},
 	{
-		display: "",
-		path: "/",
+		display: "About-Me",
+		path: "/about",
 	},
 	{
-		display: "Movies",
-		path: "/movie",
+		display: "Privacy-Policy",
+		path: "/privacy-policy",
 	},
 ];
 
-const Footer = () => {
-	return (
+const footer = () => {
+	const { pathname } = useLocation();
+	const headerRef = useRef(null);
+
+	const active = headerNav.findIndex((e) => e.path === pathname);
+
+	useEffect(() => {
+		const shrinkHeader = () => {
+			if (
+				document.body.scrollTop > 100 ||
+				document.documentElement.scrollTop > 100
+			) {
+				headerRef.current.classList.add("shrink");
+			} else {
+				headerRef.current.classList.remove("shrink");
+			}
+		};
+		window.addEventListener("scroll", shrinkHeader);
+		return () => {
+			window.removeEventListener("scroll", shrinkHeader);
+		};
 		<div className="footer" style={{ backgroundImage: `url(${bg})` }}>
 			<div className="footer__content container">
 				<div className="footer__content__logo">
@@ -56,9 +75,7 @@ const Footer = () => {
 				</div>
 				<div className="footer__content__menus">
 					<div className="footer__content__menu">
-						<Link className="contact" to="">
-							Contact me
-						</Link>
+						<Link className="contact" to="">Contact me</Link>
 					</div>
 					<div className="footer__content__menu">
 						<Link className="about" to="/">
@@ -73,7 +90,8 @@ const Footer = () => {
 				</div>
 			</div>
 		</div>
-	);
-};
+	}, []);
+
+
 
 export default Footer;

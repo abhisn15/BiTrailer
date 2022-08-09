@@ -24,14 +24,12 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-		<title>BiMovies</title>
+		<title>BiTrailer</title>
 	</head>
 	<body>
 		<noscript>You need to enable JavaScript to run this app.</noscript>
 		<div id="root"></div>
 		<div class="footer-bottom">
-			<hr />
-			<button class="klik" onclick="showAlert()">Klik Aku cuy</button>
 			<h4 id="jam"></h4>
 			<h4 class="copyright">&copy; Copyright - Movies Theme By AbhisnGaming</h4>
 		</div>
@@ -117,7 +115,7 @@
 
 			.klik {
 				margin-left: 120px;
-				opacity: 0.1;
+				opacity: 0;
 				font-size: 10px;
 				position: relative;
 				top: 10px;
@@ -156,28 +154,7 @@
 				}
 			}
 		</style>
-		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 		<script>
-			function showAlert() {
-				swal("MAKACIHHH sudah mengklik tombol ini btw aku 👉👈").then(
-					(value) => {
-						swal(
-							`AKU SAYANG BANGET SAMA KAMU JADI JANGAN PERGI YAH STAY WITH ME OKEHHH 🙏🥰:)`
-						).then((value) => {
-							swal(`MAKASIHHHHH 👉👈:)`).then((value) => {
-								swal("LOVE YOUU SOO MUCHHHH OHMYCOYAAAKUU😘:)").then(
-									(value) => {
-										swal(
-											"WALAUPUN KITA SUDAH BEDA SEKOLAH KU HARAP KAMU JUGA MENCINTAIKU SEMOGA AJA KAMU SUKAA SWEETALERT YANG AKU BUAT INI 🥺"
-										);
-									}
-								);
-							});
-						});
-					}
-				);
-			}
-
 			// Scroll To Top
 			const btnScrollToTop = document.querySelector(".btnScrollToTop");
 
