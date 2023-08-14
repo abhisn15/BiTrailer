@@ -1,1 +1,1 @@
-Aplikasi ini menggunakan Framework React and full JavaScript
+Aplikasi ini menggunakan Framework React JS Full
